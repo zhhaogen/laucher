@@ -1,0 +1,35 @@
+/**
+ * 
+ * @author zhhaogen
+ * 创建于 2020年2月28日 下午8:50:10
+ */
+package cn.zhg.laucher.matcher;
+
+import cn.zhg.laucher.model.AppInfo;
+import cn.zhg.laucher.util.SomeUtils;
+
+/**
+ * 
+ *
+ */
+public class AppLabelFilterModel  extends StringFilterModel<AppInfo>
+{
+
+	/** */
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * @param name
+	 */
+	public AppLabelFilterModel(String name)
+	{
+		super(name); 
+	}
+
+	@Override
+	public String getDataValue(AppInfo data)
+	{
+		return SomeUtils.toString(data.label);
+	}
+
+}

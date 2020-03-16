@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cn.zhg.laucher"
+    android:versionCode="1"
+    android:versionName="0.9.9.1" >
+
+    <uses-sdk
+        android:minSdkVersion="21"
+        android:targetSdkVersion="23" />
+
+    <application
+        android:label="@string/title_app"
+        android:theme="@style/android:Theme.Material.Light.DarkActionBar" >
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:excludeFromRecents="true"
+            android:label="@string/title_main" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.HOME" />
+                <category android:name="android.intent.category.M_HOME" /> 
+                <category android:name="android.intent.category.MONKEY" /> 
+                <category android:name="android.intent.category.LAUNCHER" /> 
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SettingActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/action_setting" >
+        </activity>
+    </application>
+
+</manifest>
