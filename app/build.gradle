@@ -1,0 +1,21 @@
+apply from:"${System.env.GRADLE_USER_HOME}/../scripts/androidProjectAppMini.gradle"
+android{
+    defaultConfig{
+        flavorDimensions "versionCode"
+    }
+    productFlavors {
+        app{
+            applicationId GROUP_ID
+        }
+        mumuApp{
+            applicationId "com.mumu.launcher"
+        }
+    }
+}
+dependencies {
+    implementation project(":service")
+    implementation "cn.zhg.base:base:+"
+    implementation "cn.zhg.base:base1:+"
+    implementation "cn.zhg.base:basic:+"
+    implementation "cn.zhg:logger:+"
+}

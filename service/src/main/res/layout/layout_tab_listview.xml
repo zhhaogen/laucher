@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="gone"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/filter_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:orientation="horizontal" >
+
+        <SearchView
+            android:id="@+id/searchView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:iconifiedByDefault="false"
+            android:queryHint="@string/tip_input_keyword"
+            android:searchIcon="@null"
+            android:visibility="gone" />
+
+        <CheckBox
+            android:visibility="gone"
+            android:id="@+id/enabled_check"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/lab_enabled"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <CheckBox
+            android:visibility="gone"
+            android:id="@+id/exported_check"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/lab_exported"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:dividerHeight="6dp" />
+
+</LinearLayout>

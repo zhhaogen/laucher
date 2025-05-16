@@ -1,0 +1,5 @@
+apply from:"${System.env.GRADLE_USER_HOME}/../scripts/androidProjectLibMini.gradle"
+dependencies {
+    implementation("xiaogen.util:logger:+")
+    implementation "cn.zhg.base:basic:+"
+}

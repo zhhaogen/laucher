@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppWallpaperTheme" parent="@android:style/Theme.Material.Light.DarkActionBar">
+        <item name="android:windowBackground">@color/gray</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowShowWallpaper">true</item>
+    </style>
+
+    <style name="AppTheme" parent="@android:style/Theme.Material.Light.DarkActionBar"></style>
+
+</resources>

@@ -1,0 +1,32 @@
+/***
+ * 使用硬链接到此文件<br>
+ *android 根目录settings.gradle
+ **/
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+	//本地仓库无法导入,所以注释掉
+    //repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+
+//导入所有子项目
+//File[] dirs=rootProject.projectDir.listFiles();
+//if(dirs!=null&&dirs.length>0){
+//    for(File dir:dirs){
+//        if(dir.isDirectory()&&new File(dir,"build.gradle").exists()&&!new File(dir,"ignore").exists()){
+//            include(dir.getName());
+//        }
+//    }
+//}
+
+apply from:"${System.env.GRADLE_USER_HOME}/../scripts/projectIncludes.gradle"

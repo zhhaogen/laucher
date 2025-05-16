@@ -1,0 +1,28 @@
+name: Android CI
+on: push
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-java@v3
+        with:
+          distribution: temurin
+          java-version: 17
+          cache: gradle
+      - uses: gradle/gradle-build-action@v2
+        id: setup-gradle
+        with:
+          gradle-version: current
+      - run: gradle build
+      - run: ls -R |grep .apk
+      - uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          body: 最新自动打包
+          files: |-
+            ./app/build/outputs/apk/debug/app-debug.apk
+            ./testapp/build/outputs/apk/debug/testapp-debug.apk
+      - run: echo "ok"

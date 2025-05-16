@@ -1,0 +1,16 @@
+/***
+ * 使用硬链接到此文件<br>
+ *android 根目录build.gradle
+ * 需要设置变量androidPluginVersion
+ **/
+//插件管理
+plugins {
+    id 'com.android.application' version "${androidPluginVersion}" apply false
+    id 'com.android.library' version "${androidPluginVersion}" apply false
+}
+//添加clean任务
+if(tasks.findByName("clean")==null){
+    task clean(type: Delete) {
+        delete rootProject.buildDir
+    }
+}
